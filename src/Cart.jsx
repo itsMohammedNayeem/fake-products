@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
+import ProductList from "./ProductList";
 
 const Cart = () => {
-  const [userData, setUserData] = useState([]);
-
   return (
-    <div>
-      <h1>Cart</h1>
-      <p>{userData}</p>
+    <div className="text-center items-center justify-center h-screen w-full p-8">
+      <h1 className="text-2xl">Cart</h1>
+      <ProductList />
     </div>
   );
 };
