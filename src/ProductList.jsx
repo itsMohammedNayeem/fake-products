@@ -4,6 +4,7 @@ import ProductDetail from "./ProductDetail";
 
 const ProductList = () => {
   const [userData, setUserData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProductList = async () => {
@@ -19,17 +20,29 @@ const ProductList = () => {
         setUserData(combinedData);
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchProductList();
   }, []);
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-lg font-semibold">Loading products...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="p-8">
-      <h1 className="text-xl">Product List</h1>
-      {userData.map((product) => (
-        <ProductDetail key={product.id} product={product} />
-      ))}
+      <h1 className="text-3xl font-bold text-center mb-10">Product List</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {userData.map((product) => (
+          <ProductDetail key={product.id} product={product} />
+        ))}
+      </div>
     </div>
   );
 };
