@@ -1,6 +1,6 @@
 # Shopping Cart Application
 
-This is a simple React application showcasing a shopping cart interface. It utilizes Tailwind CSS for styling and fetches product data from a fake store API.
+This is a simple React application showcasing a shopping cart interface. It utilizes Tailwind CSS for styling and fetching product data from a fake store API.
 
 ## Features
 
@@ -32,3 +32,6 @@ Before running this project, ensure you have the following installed:
     ```bash
     npm start
     ```
+
+![image](https://github.com/itsMohammedNayeem/fake-products/assets/127741549/b1404f2e-a169-462a-9195-2fa741a1401b)
+
